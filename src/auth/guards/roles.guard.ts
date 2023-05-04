@@ -47,9 +47,10 @@ export class RolesGuard implements CanActivate {
         );
       }
     }
-    // if (roleUser === ROLES.ADMIN) {
-    //   return true;
-    // }
+
+    if (roleUser === ROLES.ADMIN) {
+      return true;
+    }
 
     const isAuth = roles.some((role) => role === roleUser);
 
